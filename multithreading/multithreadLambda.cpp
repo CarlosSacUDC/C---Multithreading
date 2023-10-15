@@ -2,11 +2,9 @@
 #include <thread>
 #include <future>
 
-//program that uses multithreading to compute the expression (A+B) * (C+D) with two different threads for addition of the variables 
-
-int result = 0; // shared variable to store the final result
-int sum1 = 0; // variable to store the sum of A+B
-int sum2 = 0; // variable to store the sum of C+D
+int result = 0; 
+int sum1 = 0;
+int sum2 = 0; 
 
 // lambda expression to compute the sum of two numbers and set the value of a promise
 auto add = [] (std::promise<int> p, int x, int y, std::string s) {
@@ -15,6 +13,7 @@ auto add = [] (std::promise<int> p, int x, int y, std::string s) {
 };
 
 int main() {
+    std::cout <<"Lambda Expressions"<< std::endl;
     int a = 10, b = 20, c = 30, d = 40;
     std::promise<int> p1, p2; // create two promises
     std::future<int> f1 = p1.get_future(), f2 = p2.get_future(); // get futures from promises
