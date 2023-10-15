@@ -13,6 +13,7 @@ auto add = [] (std::promise<int> p, int x, int y, std::string s) {
 };
 
 int main() {
+    std::cout <<"Lambda Expressions"<< std::endl;
     int a = 10, b = 20, c = 30, d = 40;
     std::promise<int> p1, p2; // create two promises
     std::future<int> f1 = p1.get_future(), f2 = p2.get_future(); // get futures from promises
